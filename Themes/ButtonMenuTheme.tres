@@ -38,12 +38,11 @@ expand_margin_bottom = 2.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d0m41"]
 texture = ExtResource("2_o8odm")
-texture_margin_bottom = 1.21617
+texture_margin_bottom = 0.405387
 region_rect = Rect2(113, 98, 30, 13)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ivftm"]
 texture = ExtResource("2_o8odm")
-texture_margin_bottom = 2.16209
 region_rect = Rect2(113, 81, 30, 14)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_p3ns6"]

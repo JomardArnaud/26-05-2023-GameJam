@@ -1,13 +1,15 @@
-extends Node2D	
+extends Control
+
+
+
+@export var pageButton: Array[Array] 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+#	for page in pageButton :
+#		for button in page :
+#			print("button name : " + button)
 
-func _unhandled_input(event):
-	if (event.is_action_pressed("Quit")):
-		get_tree().quit()
-		
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
