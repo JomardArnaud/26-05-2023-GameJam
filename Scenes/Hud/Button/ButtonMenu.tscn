@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://da52blmurpfb0"]
+
+[ext_resource type="Script" path="res://Scenes/Hud/Button/ButtonMenu.gd" id="1_6w58p"]
+
+[node name="ButtonMenu" type="Button"]
+size_flags_vertical = 3
+script = ExtResource("1_6w58p")
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://baylybuohtncw"]
+
+[node name="MenuLabel" type="Label"]
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true

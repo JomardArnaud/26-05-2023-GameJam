@@ -1,153 +1,59 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0oafq3ds7s3o"]
+[gd_scene load_steps=5 format=3 uid="uid://b0oafq3ds7s3o"]
 
 [ext_resource type="Script" path="res://Scenes/Hud/Menu/MainMenu.gd" id="1_43m1b"]
+[ext_resource type="PackedScene" uid="uid://ccju3f3r20nbk" path="res://Scenes/Hud/Menu/MenuPage.tscn" id="2_qlxtv"]
+[ext_resource type="PackedScene" uid="uid://da52blmurpfb0" path="res://Scenes/Hud/Button/ButtonMenu.tscn" id="4_40i2e"]
+[ext_resource type="PackedScene" uid="uid://baylybuohtncw" path="res://Scenes/Hud/Menu/MenuLabel.tscn" id="4_pss6t"]
 
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_43m1b")
 
-[node name="Main" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Main" parent="." instance=ExtResource("2_qlxtv")]
 
-[node name="CenterContainer" type="CenterContainer" parent="Main"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="Main/CenterContainer"]
-custom_minimum_size = Vector2(512, 256)
+[node name="MenuLabel" parent="Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" index="0" instance=ExtResource("4_pss6t")]
 layout_mode = 2
+text = "Art of ida"
 
-[node name="MarginContainer" type="MarginContainer" parent="Main/CenterContainer/PanelContainer"]
+[node name="RTS" parent="Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" index="1" instance=ExtResource("4_40i2e")]
 layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
+text = "RTS"
+nextScenePath = "res://Scenes/Main/PlayerPlayground.tscn"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main/CenterContainer/PanelContainer/MarginContainer"]
+[node name="CARD" parent="Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" index="2" instance=ExtResource("4_40i2e")]
 layout_mode = 2
-theme_override_constants/separation = 8
+text = "CARD"
 
-[node name="Main" type="Label" parent="Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Settings" parent="Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" index="3" node_paths=PackedStringArray("currentPage", "nextPage") instance=ExtResource("4_40i2e")]
 layout_mode = 2
-size_flags_vertical = 3
-text = "Art Of Ida"
-horizontal_alignment = 1
-vertical_alignment = 1
+text = "settings"
+currentPage = NodePath("../../../../..")
+nextPage = NodePath("../../../../../../Settings")
 
-[node name="RTSTestField" type="Button" parent="Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Settings2" parent="Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" index="4" node_paths=PackedStringArray("currentPage", "nextPage") instance=ExtResource("4_40i2e")]
 layout_mode = 2
-size_flags_vertical = 3
-text = "RTS TEST FIELD"
+text = "settings"
+currentPage = NodePath("../../../../..")
+nextPage = NodePath("../../../../../../Settings")
 
-[node name="CardTestField" type="Button" parent="Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Settings3" parent="Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" index="5" node_paths=PackedStringArray("currentPage", "nextPage") instance=ExtResource("4_40i2e")]
 layout_mode = 2
-size_flags_vertical = 3
-text = "CARD TEST FIELD"
+text = "settings"
+currentPage = NodePath("../../../../..")
+nextPage = NodePath("../../../../../../Settings")
 
-[node name="Settings" type="Button" parent="Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="Settings" parent="." instance=ExtResource("2_qlxtv")]
+visible = false
+
+[node name="MenuLabel" parent="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" index="0" instance=ExtResource("4_pss6t")]
 layout_mode = 2
-size_flags_vertical = 3
-text = "SETTINGS"
+text = "settings"
 
-[node name="Quit" type="Button" parent="Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="back" parent="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer" index="1" node_paths=PackedStringArray("currentPage", "nextPage") instance=ExtResource("4_40i2e")]
 layout_mode = 2
-size_flags_vertical = 3
-text = "QUIT"
+text = "back"
+currentPage = NodePath("../../../../..")
+nextPage = NodePath("../../../../../../Main")
 
-[node name="Settings" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="CenterContainer" type="CenterContainer" parent="Settings"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="PanelContainer" type="PanelContainer" parent="Settings/CenterContainer"]
-custom_minimum_size = Vector2(512, 256)
-layout_mode = 2
-
-[node name="MarginContainer" type="MarginContainer" parent="Settings/CenterContainer/PanelContainer"]
-layout_mode = 2
-theme_override_constants/margin_left = 16
-theme_override_constants/margin_top = 16
-theme_override_constants/margin_right = 16
-theme_override_constants/margin_bottom = 16
-
-[node name="ScrollContainer" type="ScrollContainer" parent="Settings/CenterContainer/PanelContainer/MarginContainer"]
-layout_mode = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Settings/CenterContainer/PanelContainer/MarginContainer/ScrollContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/separation = 8
-
-[node name="Settings" type="Label" parent="Settings/CenterContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "Settings
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Hotkeys" type="Button" parent="Settings/CenterContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "HOTKEYS"
-
-[node name="Graphics" type="Button" parent="Settings/CenterContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "GRAPHICS"
-
-[node name="Audio" type="Button" parent="Settings/CenterContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "AUDIO"
-
-[node name="Back" type="Button" parent="Settings/CenterContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "BACK"
-
-[node name="Graphics2" type="Button" parent="Settings/CenterContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "GRAPHICS"
-
-[node name="Audio2" type="Button" parent="Settings/CenterContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "AUDIO"
-
-[node name="Back2" type="Button" parent="Settings/CenterContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "BACK"
-
-[node name="Hotkeys2" type="Button" parent="Settings/CenterContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-text = "HOTKEYS"
-
-[connection signal="pressed" from="Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/RTSTestField" to="." method="_on_rts_test_field_pressed"]
-[connection signal="pressed" from="Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="Main/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Settings/CenterContainer/PanelContainer/MarginContainer/ScrollContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
+[editable path="Main"]
+[editable path="Settings"]
+[editable path="Settings/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/back"]
